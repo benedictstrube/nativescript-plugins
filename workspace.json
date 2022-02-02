@@ -78,14 +78,16 @@
       "projectType": "application",
       "targets": {
         "build": {
+          "executor": "@nrwl/workspace:run-commands",
           "outputs": [
             "dist/packages"
           ],
           "options": {
-            "commands": [],
+            "commands": [
+              "nx run highcharts-wrapper:build.all"
+            ],
             "parallel": false
-          },
-          "executor": "@nrwl/workspace:run-commands"
+          }
         },
         "focus": {
           "outputs": [
@@ -101,6 +103,51 @@
         }
       },
       "sourceRoot": ""
+    },
+    "highcharts-wrapper": {
+      "root": "packages/highcharts-wrapper",
+      "projectType": "library",
+      "sourceRoot": "packages/highcharts-wrapper",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/packages/highcharts-wrapper",
+            "tsConfig": "packages/highcharts-wrapper/tsconfig.json",
+            "packageJson": "packages/highcharts-wrapper/package.json",
+            "main": "packages/highcharts-wrapper/index.d.ts",
+            "assets": [
+              "packages/highcharts-wrapper/*.md",
+              "packages/highcharts-wrapper/index.d.ts",
+              "LICENSE",
+              {
+                "glob": "**/*",
+                "input": "packages/highcharts-wrapper/platforms/",
+                "output": "./platforms/"
+              }
+            ]
+          }
+        },
+        "build.all": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx run highcharts-wrapper:build",
+              "node tools/scripts/build-finish.ts highcharts-wrapper"
+            ],
+            "parallel": false
+          }
+        },
+        "focus": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx g @nativescript/plugin-tools:focus-packages highcharts-wrapper"
+            ],
+            "parallel": false
+          }
+        }
+      }
     }
   },
   "cli": {

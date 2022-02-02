@@ -5,7 +5,7 @@ npm run setup
 npm start
 ```
 
-- @benedictstrube
+- [@benedictstrube/highcharts-wrapper](packages/highcharts-wrapper/README.md)
 
 # How to use?
 

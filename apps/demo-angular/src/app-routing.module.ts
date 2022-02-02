@@ -6,7 +6,8 @@ import { HomeComponent } from './home.component';
 
 const routes: Routes = [
    { path: '', redirectTo: '/home', pathMatch: 'full' },
-   { path: 'home', component: HomeComponent }
+   { path: 'home', component: HomeComponent },
+	{ path: 'highcharts-wrapper', loadChildren: () => import('./plugin-demos/highcharts-wrapper.module').then(m => m.HighchartsWrapperModule) }
 ];
 
 @NgModule({

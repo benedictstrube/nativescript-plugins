@@ -63,6 +63,13 @@ module.exports = {
 		// packages
 		// build output is always in dist/packages
 		'@benedictstrube': {
+			// @benedictstrube/highcharts-wrapper
+			'highcharts-wrapper': {
+				build: {
+					script: 'nx run highcharts-wrapper:build.all',
+					description: '@benedictstrube/highcharts-wrapper: Build',
+				},
+			},
 			'build-all': {
 				script: 'nx run all:build',
 				description: 'Build all packages',
@@ -73,6 +80,10 @@ module.exports = {
 			description: '_____________  Focus (VS Code supported)  _____________',
 		},
 		focus: {
+			'highcharts-wrapper': {
+				script: 'nx run highcharts-wrapper:focus',
+				description: 'Focus on @benedictstrube/highcharts-wrapper',
+			},
 			reset: {
 				script: 'nx run all:focus',
 				description: 'Reset Focus',
