@@ -1,8 +1,12 @@
-<ActionBar title="highcharts-wrapper" class="action-bar"> </ActionBar>
-<StackLayout class="p-20">
-	<ScrollView class="h-full">
-		<StackLayout>
-			<Button text="Test highcharts-wrapper" (tap)="demoShared.testIt()" class="btn btn-primary"></Button>
-		</StackLayout>
-	</ScrollView>
+<ActionBar title='highcharts-wrapper'
+           class='action-bar'></ActionBar>
+<StackLayout backgroundColor='black'>
+  <ScrollView class='h-full'>
+    <StackLayout>
+      <Label [text]='value'
+             color='white'></Label>
+      <HighchartsWrapper (loaded)='loadedEvent($event)'
+                         [config]='config'></HighchartsWrapper>
+    </StackLayout>
+  </ScrollView>
 </StackLayout>

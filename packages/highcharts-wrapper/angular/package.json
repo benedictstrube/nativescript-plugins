@@ -1,0 +1,17 @@
+{
+	"name": "@benedictstrube/highcharts-wrapper-angular",
+	"ngPackage": {
+		"lib": {
+			"entryFile": "index.ts",
+			"umdModuleIds": {
+				"@nativescript/core": "ns-core",
+				"@nativescript/angular": "ns-angular",
+				"nativescript-webview-interface": "ns-webview-interface",
+				"@benedictstrube/highcharts-wrapper": "ns-highcharts-wrapper"
+			}
+		},
+		"allowedNonPeerDependencies": [
+			"."
+		]
+	}
+}
