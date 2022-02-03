@@ -144,7 +144,7 @@ export class HighchartsWrapperComponent {
     this.demoShared = new DemoSharedHighchartsWrapper();
   }
 
-  loadedEvent(event: ChartLoadedEventData) {
+  onChartReady(event: ChartLoadedEventData) {
     this.chartApi = event.chartApi
   }
 }

@@ -54,7 +54,7 @@ export class ChartComponent implements OnInit, OnDestroy, HighchartsAPI {
   /* ---------------------------- events ---------------------------- */
 
   @Output()
-  loaded: EventEmitter<ChartLoadedEventData> = new EventEmitter<ChartLoadedEventData>();
+  onChartReady: EventEmitter<ChartLoadedEventData> = new EventEmitter<ChartLoadedEventData>();
 
   /* ---------------------------- private stuff ---------------------------- */
 
@@ -81,7 +81,7 @@ export class ChartComponent implements OnInit, OnDestroy, HighchartsAPI {
       });
 
     // emit loaded event
-    this.loaded.next({ chartApi: this });
+    this.onChartReady.next({ chartApi: this });
   }
 
   ngOnDestroy(): void {

@@ -5,7 +5,7 @@
     <StackLayout>
       <Label [text]='value'
              color='white'></Label>
-      <HighchartsWrapper (loaded)='loadedEvent($event)'
+      <HighchartsWrapper (onChartReady)='onChartReady($event)'
                          [config]='config'></HighchartsWrapper>
     </StackLayout>
   </ScrollView>
